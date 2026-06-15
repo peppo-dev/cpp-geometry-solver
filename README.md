@@ -15,15 +15,15 @@ I built these programs to practice logic, conditional structures (`if-else`), sy
 
 The repository contains three main programs:
 
-1. **`shape_properties_solver.cpp`** (The first script)
+1. **`derfig.cpp`** (The first script)
    * Calculates missing attributes of a shape (like finding the side or height given the area or diagonal).
    * Supports triangles, rectangles, and squares.
 
-2. **`geometry_area_calculator.cpp`** (The second script)
+2. **`aree.cpp`** (The second script)
    * A direct area calculator for various geometric shapes.
    * Supports: Triangles, Rectangles, Squares, Parallelograms, Trapezoids, and Rhombuses.
 
-3. **`pythagorean_theorem.cpp`** (The third script)
+3. **`teorema_pitagora.cpp`** (The third script)
    * Applies the Pythagorean theorem based on the data you have.
    * Can find the hypotenuse if you provide both legs, or find a missing leg if you provide the hypotenuse and one leg.
 
@@ -36,17 +36,17 @@ To run any of these programs locally, you will need a C++ compiler (like GCC/Min
 1. **Clone the repository:**
    ```bash
    git clone https://github.com
-   cd YOUR_REPOSITORY_NAME
+   cd cpp-geometry-solver
    ```
 
 2. **Compile a file (for example, the Pythagorean solver):**
    ```bash
-   g++ pythagorean_theorem.cpp -o pythagorean_theorem
+   g++ teorema_pitagora.cpp 
    ```
 
 3. **Run the executable:**
-   * On Windows: `pythagorean_theorem.exe`
-   * On Linux/macOS: `./pythagorean_theorem`
+   * On Windows: `teorema_pitagora.exe`
+   * On Linux/macOS: `./teorema_pitagora`
 
 ---
 
