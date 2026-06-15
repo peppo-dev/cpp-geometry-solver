@@ -1,44 +1,54 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+
 using namespace std;
+
 int main()
 {
- char y_or_n;
- cout << "Hai già i due cateti?" << endl;
- cout << "y or n" << endl;
- cin >> y_or_n;
- cin.ignore();
-if (y_or_n == 'y')
-{
-   int cateto_maggiore2;
- int cateto_minore2;
- cout << "inserisci valore del cateto maggiore" << endl;
- cin >> cateto_maggiore2;
- cout << "inserisci valore del cateto minore" << endl;
- cin >> cateto_minore2 ;
- double cateto_maggiore3= pow(cateto_maggiore2, 2);
- double cateto_minore3= pow(cateto_minore2, 2 );
- double ipotenusa = sqrt(cateto_maggiore3 + cateto_minore3);
- cout << ipotenusa << endl;
-}
-else if (y_or_n == 'n')
-{
- int ipotenusa3;
- int cateto2; // maggiore o minore
- cout << "inserisci valore dell'ipotenusa" << endl;
- cin >> ipotenusa3;
- cout << "inserisci valore del cateto " << endl;
- cin >> cateto2;
- double ipotenusa33 = pow(ipotenusa3, 2 ); // ipotenusa al quadrasto 
- double cateto_minore4 = pow(cateto2, 2 ); // cateto al quadrato
- double cateto_ = sqrt(ipotenusa33 - cateto_minore4); // calcolo del cateto mancante
- cout << cateto_ << endl; // output
-}
-else
-{
-    cout << "input errato, inserisci tra y o n" << endl;
-}
-return 0;
-}
+    char y_or_n;
+    cout << "Do you already have both legs?" << endl;
+    cout << "y or n" << endl;
+    cin >> y_or_n;
+    cin.ignore();
 
+    // --- CASE: BOTH LEGS AVAILABLE ---
+    if (y_or_n == 'y')
+    {
+        int major_leg;
+        int minor_leg;
+        cout << "Enter the value of the major leg:" << endl;
+        cin >> major_leg;
+        cout << "Enter the value of the minor leg:" << endl;
+        cin >> minor_leg;
+        
+        double major_leg_sq = pow(major_leg, 2);
+        double minor_leg_sq = pow(minor_leg, 2);
+        double hypotenuse = sqrt(major_leg_sq + minor_leg_sq);
+        
+        cout << "The hypotenuse is: " << hypotenuse << endl;
+    }
+    // --- CASE: MISSING ONE LEG ---
+    else if (y_or_n == 'n')
+    {
+        int hypotenuse_input;
+        int given_leg; 
+        cout << "Enter the value of the hypotenuse:" << endl;
+        cin >> hypotenuse_input;
+        cout << "Enter the value of the known leg:" << endl;
+        cin >> given_leg;
+        
+        double hypotenuse_sq = pow(hypotenuse_input, 2); // Hypotenuse squared
+        double given_leg_sq = pow(given_leg, 2);         // Leg squared
+        double missing_leg = sqrt(hypotenuse_sq - given_leg_sq); // Calculating the missing leg
+        
+        cout << "The missing leg is: " << missing_leg << endl; // Output
+    }
+    // --- INVALID INPUT ---
+    else
+    {
+        cout << "Invalid input, please enter y or n" << endl;
+    }
+    
+    return 0;
+}
