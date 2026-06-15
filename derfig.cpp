@@ -6,163 +6,163 @@ using namespace std;
 
 int main() 
 {
-    cout << "Inserisci il nome della figura (triangolo/rettangolo/quadrato):" << endl;
-    string nome_figura;
-    cin >> nome_figura;
+    cout << "Enter the name of the shape (triangle/rectangle/square):" << endl;
+    string shape_name;
+    cin >> shape_name;
 
-    // --- GESTIONE TRIANGOLO ---
-    if (nome_figura == "triangolo")
+    // --- TRIANGLE MANAGEMENT ---
+    if (shape_name == "triangle")
     {
-        string dato_mancante;
-        cout << "Cos'è che ti manca? (lato/altezza)" << endl;
-        cin >> dato_mancante;
+        string missing_data;
+        cout << "Which value is missing? (side/height)" << endl;
+        cin >> missing_data;
         
-        if (dato_mancante == "lato")
+        if (missing_data == "side")
         {
-            float area, altezza;
-            cout << "Inserisci il valore dell'area:" << endl;
+            float area, height;
+            cout << "Enter the area value:" << endl;
             cin >> area;
-            cout << "Inserisci il valore dell'altezza:" << endl;
-            cin >> altezza;
-            cout << "Il lato misura: " << (area * 2) / altezza << endl;
+            cout << "Enter the height value:" << endl;
+            cin >> height;
+            cout << "The side measures: " << (area * 2) / height << endl;
             return 0;
         } 
-        else if (dato_mancante == "altezza")
+        else if (missing_data == "height")
         {
-            float area1, lato1;
-            cout << "Inserisci il valore dell'area:" << endl;
+            float area1, side1;
+            cout << "Enter the area value:" << endl;
             cin >> area1;
-            cout << "Inserisci il valore del lato:" << endl;
-            cin >> lato1;
-            cout << "L'altezza misura: " << (area1 * 2) / lato1 << endl;
+            cout << "Enter the side value:" << endl;
+            cin >> side1;
+            cout << "The height measures: " << (area1 * 2) / side1 << endl;
             return 0;        
         }
         else 
         {
-            cout << "Input errato" << endl;
+            cout << "Invalid input" << endl;
             return 0;
         }
     }
     
-    // --- GESTIONE RETTANGOLO ---
-    else if (nome_figura == "rettangolo")
+    // --- RECTANGLE MANAGEMENT ---
+    else if (shape_name == "rectangle")
     { 
-        cout << "Cosa ti serve del rettangolo? (lato/altezza)" << endl;
-        string cosa_serve;
-        cin >> cosa_serve;
+        cout << "What do you need for the rectangle? (side/height)" << endl;
+        string needed_data;
+        cin >> needed_data;
         
-        if (cosa_serve == "lato")
+        if (needed_data == "side")
         {
-            string come_calcolare;
-            cout << "Attraverso quale dato lo vuoi calcolare? (diagonale/area)" << endl;
-            cin >> come_calcolare;
+            string calculation_method;
+            cout << "Which data do you want to use for the calculation? (diagonal/area)" << endl;
+            cin >> calculation_method;
             
-            if (come_calcolare == "diagonale")
+            if (calculation_method == "diagonal")
             {
-                float diagonale, altezza1;
-                cout << "Inserisci il valore della diagonale:" << endl;
-                cin >> diagonale;
-                cout << "Inserisci il valore dell'altezza:" << endl;
-                cin >> altezza1;
+                float diagonal, height1;
+                cout << "Enter the diagonal value:" << endl;
+                cin >> diagonal;
+                cout << "Enter the height value:" << endl;
+                cin >> height1;
                 
-                float diagonalepot = pow(diagonale, 2);
-                float altezzapot = pow(altezza1, 2);
-                float sottr = diagonalepot - altezzapot;
+                float diagonal_sq = pow(diagonal, 2);
+                float height_sq = pow(height1, 2);
+                float subtraction = diagonal_sq - height_sq;
                 
-                cout << "Il lato misura: " << sqrt(sottr) << endl;
+                cout << "The side measures: " << sqrt(subtraction) << endl;
                 return 0; 
             }
-            else if (come_calcolare == "area") 
+            else if (calculation_method == "area") 
             {
-                float area2, altezza2;
-                cout << "Inserisci il valore dell'area:" << endl;
+                float area2, height2;
+                cout << "Enter the area value:" << endl;
                 cin >> area2;
-                cout << "Inserisci il valore dell'altezza:" << endl;
-                cin >> altezza2;
-                cout << "Il lato misura: " << area2 / altezza2 << endl;
+                cout << "Enter the height value:" << endl;
+                cin >> height2;
+                cout << "The side measures: " << area2 / height2 << endl;
                 return 0;
             }
             else 
             {
-                cout << "Metodo di calcolo non valido" << endl;
+                cout << "Invalid calculation method" << endl;
             }
         }
-        else if (cosa_serve == "altezza") 
+        else if (needed_data == "height") 
         {
-            string come_lo_calcolo;
-            cout << "Attraverso quale dato lo vuoi calcolare? (diagonale/area)" << endl;
-            cin >> come_lo_calcolo;
+            string calculation_method_height;
+            cout << "Which data do you want to use for the calculation? (diagonal/area)" << endl;
+            cin >> calculation_method_height;
             
-            if (come_lo_calcolo == "diagonale") 
+            if (calculation_method_height == "diagonal") 
             {
-                float diagonale, base;
-                cout << "Inserisci la diagonale:" << endl;
-                cin >> diagonale;
-                cout << "Inserisci la base:" << endl;
+                float diagonal, base;
+                cout << "Enter the diagonal:" << endl;
+                cin >> diagonal;
+                cout << "Enter the base:" << endl;
                 cin >> base;
-                cout << "L'altezza misura: " << sqrt(pow(diagonale, 2) - pow(base, 2)) << endl;
+                cout << "The height measures: " << sqrt(pow(diagonal, 2) - pow(base, 2)) << endl;
                 return 0;
             }
-            else if (come_lo_calcolo == "area") 
+            else if (calculation_method_height == "area") 
             {
                 float area, base;
-                cout << "Inserisci l'area:" << endl;
+                cout << "Enter the area:" << endl;
                 cin >> area;
-                cout << "Inserisci la base:" << endl;
+                cout << "Enter the base:" << endl;
                 cin >> base;
-                cout << "L'altezza misura: " << area / base << endl;
+                cout << "The height measures: " << area / base << endl;
                 return 0;
             }
         }
     }
     
-    // --- GESTIONE QUADRATO ---
-    else if (nome_figura == "quadrato") 
+    // --- SQUARE MANAGEMENT ---
+    else if (shape_name == "square") 
     {
-        string cosa_ti_serve;
-        cout << "cosa ti serve? (lato/diagonale)" << endl;
-        cin >> cosa_ti_serve;
+        string needed_data_square;
+        cout << "What do you need? (side/diagonal)" << endl;
+        cin >> needed_data_square;
 
-        if (cosa_ti_serve == "lato")
+        if (needed_data_square == "side")
         {
-            string come_te_calco;
-            cout << "come te lo vuoi calcolare? (diagonale/area)" << endl;
-            cin >> come_te_calco;
+            string calculation_method_square;
+            cout << "Which data do you want to use for the calculation? (diagonal/area)" << endl;
+            cin >> calculation_method_square;
             
-            if (come_te_calco == "diagonale")
+            if (calculation_method_square == "diagonal")
             {
-                float diago;
-                cout << "inserisci il valore della diagonale:" << endl;
-                cin >> diago;
-                cout << "Il lato misura: " << diago / sqrt(2) << endl;
+                float diagonal;
+                cout << "Enter the diagonal value:" << endl;
+                cin >> diagonal;
+                cout << "The side measures: " << diagonal / sqrt(2) << endl;
             }
-            else if (come_te_calco == "area")
+            else if (calculation_method_square == "area")
             {
-                float are;
-                cout << "inserisci valore dell'area:" << endl;
-                cin >> are;
-                cout << "Il lato misura: " << sqrt(are) << endl;
+                float area;
+                cout << "Enter the area value:" << endl;
+                cin >> area;
+                cout << "The side measures: " << sqrt(area) << endl;
             }
         }
-        else if (cosa_ti_serve == "diagonale") // Spostato correttamente FUORI dal blocco lato
+        else if (needed_data_square == "diagonal") 
         {
-            string come_te_caco;
-            cout << "come lo vuoi calcolare? (perimetro/area)" << endl;
-            cin >> come_te_caco;
+            string calculation_method_diag;
+            cout << "Which data do you want to use for the calculation? (perimeter/area)" << endl;
+            cin >> calculation_method_diag;
             
-            if (come_te_caco == "perimetro")
+            if (calculation_method_diag == "perimeter")
             {    
-                float perimetro;
-                cout << "inserisci il valore del perimetro:" << endl;
-                cin >> perimetro;
-                cout << "La diagonale misura: " << (perimetro / 4) * sqrt(2) << endl;
+                float perimeter;
+                cout << "Enter the perimeter value:" << endl;
+                cin >> perimeter;
+                cout << "The diagonal measures: " << (perimeter / 4) * sqrt(2) << endl;
             }
-            else if (come_te_caco == "area")
+            else if (calculation_method_diag == "area")
             {
-                float areao;
-                cout << "inserisci il valore dell'area:" << endl;
-                cin >> areao;
-                cout << "La diagonale misura: " << sqrt(areao * 2) << endl;
+                float area_sq;
+                cout << "Enter the area value:" << endl;
+                cin >> area_sq;
+                cout << "The diagonal measures: " << sqrt(area_sq * 2) << endl;
             }
         }
     }
