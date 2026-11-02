@@ -3,7 +3,7 @@
 Welcome to my repository! This project features a collection of interactive C++ console applications designed to solve geometric formulas and mathematical problems like the Pythagorean theorem.
 
 ## About Me
-* 👦 **Age:** I am 12 years old.
+* 👦 **Age:** I am 13 years old.
 * 🚀 **Current Focus:** Deepening my knowledge of **C++** and learning computer science fundamentals.
 * 🎯 **Future Goal:** I aspire to become a **Software Engineer**! 
 
